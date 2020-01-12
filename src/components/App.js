@@ -27,11 +27,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='ui relaxed divided list'>
+      <div className='ui container relaxed divided list'>
         <SearchBar onFormSubmit={this.onTermSubmit} />
-
-        <VideoDetails video={this.state.selectedVideo} />
-        <VideoList selectedVideo={this.selectedVideo} videos={this.state.videos} />
+        <div className='ui grid'>
+          <div className='ui row'>
+            <div className='eleven wide column'>
+              <VideoDetails video={this.state.selectedVideo} />
+            </div>
+            <div className='five wide column'>
+              <VideoList selectedVideo={this.selectedVideo} videos={this.state.videos} />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
